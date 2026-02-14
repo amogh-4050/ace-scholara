@@ -1,0 +1,58 @@
+{
+  "_instructions": "HOW TO ADD PARTNERS: Add a new entry with the institution details. Put their logo image in /public/images/partners/ folder with the same filename as 'logo' field.",
+  
+  "partners": [
+    {
+      "id": 1,
+      "name": "Presidency School",
+      "type": "school",
+      "city": "Bangalore",
+      "logo": "/images/partners/presidency-school.png",
+      "website": "https://presidencyschool.com",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Sri Vidya International",
+      "type": "school",
+      "city": "Chennai",
+      "logo": "/images/partners/sri-vidya.png",
+      "website": "https://srividya.edu.in",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Global Academy",
+      "type": "school",
+      "city": "Hyderabad",
+      "logo": "/images/partners/global-academy.png",
+      "website": "https://globalacademy.edu.in",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Excel International School",
+      "type": "school",
+      "city": "Kochi",
+      "logo": "/images/partners/excel-international.png",
+      "website": "https://excelinternational.edu.in",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Wisdom College",
+      "type": "college",
+      "city": "Bangalore",
+      "logo": "/images/partners/wisdom-college.png",
+      "website": "https://wisdomcollege.edu.in",
+      "featured": false
+    }
+  ],
+  
+  "stats": {
+    "total_partners": 50,
+    "schools": 35,
+    "colleges": 15,
+    "cities": 12
+  }
+}

@@ -1,0 +1,192 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'About Us — Ace-Scholara',
+  description: 'Learn about Ace-Scholara\'s mission to transform education admissions through outcome-based partnerships and ethical practices.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-blue-400 font-semibold mb-4 tracking-wide uppercase text-sm">
+        About Us
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Admissions, reimagined.
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        We believe premium education decisions deserve better than aggressive sales, misleading rankings, and uncertain outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Insight -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            For Parents
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Parents don't lack options.
+          </p>
+          <p class="text-xl font-semibold text-blue-600 dark:text-blue-400">
+            They lack trustworthy decision-making.
+          </p>
+        </div>
+        
+        <div class="bg-purple-50 dark:bg-slate-800 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            For Institutions
+          </h2>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            Institutions don't lack demand.
+          </p>
+          <p class="text-xl font-semibold text-purple-600 dark:text-purple-400">
+            They lack qualified, decision-ready families.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        Why We Started
+      </h2>
+      
+      <div class="prose prose-lg dark:prose-invert mx-auto">
+        <p>
+          Education is one of the most important decisions a family makes. Yet, the process is broken. Institutions spend crores on marketing with uncertain returns. Parents are overwhelmed with options and confused by conflicting advice.
+        </p>
+        <p>
+          Agents push volume over fit. Portals sell visibility without accountability. Rankings can be manipulated. In this chaos, both institutions and families lose.
+        </p>
+        <p>
+          We started Ace-Scholara with a simple belief: <strong>outcomes should drive the business model.</strong> If we succeed only when the right student joins the right institution, everyone wins.
+        </p>
+        <p>
+          No upfront fees. No pressure to sell. No misaligned incentives. Just honest matching between families seeking quality education and institutions offering it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethics Section -->
+  <section id="ethics" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 text-white">
+        <div class="text-center mb-10">
+          <p class="text-blue-400 font-semibold mb-2 uppercase text-sm">Our Ethical Boundaries</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Trust is our moat
+          </h2>
+          <p class="text-xl text-gray-400">
+            These aren't just policies. They're principles we live by.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">We will never:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Sell unqualified leads to institutions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Push wrong-fit institutions to families</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Take hidden commissions or kickbacks</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span>Manipulate rankings or reviews</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">We always will:</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Be transparent about how we work</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Recommend fit over revenue</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Protect family privacy</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Honor our MoU commitments</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Our Vision
+      </h2>
+      <p class="text-xl text-blue-100 mb-8">
+        To become the most trusted name in education decisions—starting with admissions and expanding to the full education lifecycle.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <span class="px-4 py-2 bg-white/10 rounded-full">South India → Pan-India</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full">Colleges + Schools</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full">Admissions → Full Lifecycle</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        Want to know more?
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+        Whether you're an institution or a family, we'd love to talk.
+      </p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>

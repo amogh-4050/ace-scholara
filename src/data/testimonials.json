@@ -1,0 +1,56 @@
+{
+  "_instructions": "HOW TO ADD/EDIT TESTIMONIALS: Copy an existing entry, change the details, and save. Make sure to keep the commas and quotes exactly as shown.",
+  
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Dr. Ramesh Kumar",
+      "role": "Director",
+      "institution": "Presidency School, Bangalore",
+      "type": "institution",
+      "quote": "For the first time, we're paying for actual enrollments, not promises. Ace-Scholara delivered 15 qualified admissions in our first cycle with zero upfront cost.",
+      "image": "/images/testimonials/ramesh-kumar.jpg",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Priya & Suresh Menon",
+      "role": "Parents",
+      "institution": "",
+      "type": "parent",
+      "quote": "We were overwhelmed with options and confused by agents pushing expensive schools. Ace-Scholara helped us find the right fit for our daughter - not the most expensive one.",
+      "image": "/images/testimonials/menon-family.jpg",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Ananya Sharma",
+      "role": "Student",
+      "institution": "Now at Christ University",
+      "type": "student",
+      "quote": "The campus visit and alumni connect helped me understand what the college is really like, not just what the brochures say. I made a confident decision.",
+      "image": "/images/testimonials/ananya-sharma.jpg",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Prof. K. Venkataraman",
+      "role": "Principal",
+      "institution": "Sri Vidya International School",
+      "type": "institution",
+      "quote": "We've worked with agents before - high costs, low quality leads, and reputational concerns. Ace-Scholara's outcome-based model aligns perfectly with our values.",
+      "image": "/images/testimonials/venkataraman.jpg",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Rakesh & Meera Patel",
+      "role": "Parents",
+      "institution": "",
+      "type": "parent",
+      "quote": "No pressure, no hidden costs, just honest guidance. They even told us when a school wasn't the right fit. That's when we knew we could trust them.",
+      "image": "/images/testimonials/patel-family.jpg",
+      "featured": false
+    }
+  ]
+}

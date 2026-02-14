@@ -1,0 +1,50 @@
+{
+  "_instructions": "HOW TO EDIT STATS: Simply change the numbers below. The 'value' is what displays on the website. Update these as your business grows!",
+  
+  "homepage_stats": [
+    {
+      "label": "Partner Institutions",
+      "value": "50+",
+      "description": "Schools & colleges"
+    },
+    {
+      "label": "Successful Admissions",
+      "value": "500+",
+      "description": "Families helped"
+    },
+    {
+      "label": "Parent Satisfaction",
+      "value": "98%",
+      "description": "Would recommend us"
+    },
+    {
+      "label": "Cities Covered",
+      "value": "15+",
+      "description": "Across South India"
+    }
+  ],
+  
+  "institution_stats": [
+    {
+      "label": "Average Seats Filled",
+      "value": "25+",
+      "description": "Per admission cycle"
+    },
+    {
+      "label": "Partner Retention",
+      "value": "95%",
+      "description": "Partners continue with us"
+    },
+    {
+      "label": "Lead Quality",
+      "value": "4x",
+      "description": "Better than portals"
+    }
+  ],
+  
+  "market_stats": {
+    "international_schools_south_india": "300+",
+    "private_colleges_south_india": "6000+",
+    "annual_admissions_market": "₹21,600 Cr+"
+  }
+}

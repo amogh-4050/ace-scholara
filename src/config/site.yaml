@@ -1,0 +1,111 @@
+# ============================================
+# ACE-SCHOLARA SITE CONFIGURATION
+# ============================================
+# Edit this file to update site content
+# No coding knowledge required!
+# ============================================
+
+site:
+  name: "Ace-Scholara"
+  tagline: "Outcome-Backed Admissions for Premium Education"
+  description: "We help premium schools & colleges fill seats with zero marketing risk. We get paid only after a student enrolls."
+  url: "https://ace-scholara.com"
+  
+# Contact Information
+contact:
+  email: "hello@ace-scholara.com"
+  phone: "+91 98765 43210"
+  address: "Bangalore, Karnataka, India"
+
+# Social Media Links (leave empty if not used)
+social:
+  linkedin: "https://linkedin.com/company/ace-scholara"
+  twitter: ""
+  instagram: ""
+  facebook: ""
+
+# Hero Section - Main Homepage Message
+hero:
+  headline: "Admissions without hype. Outcomes without risk."
+  subheadline: "We help premium schools & colleges fill seats with zero marketing risk. We get paid only after a student enrolls and the first fee is realised."
+  
+  # Call-to-action buttons
+  cta_institutions:
+    text: "Fill seats without marketing spend"
+    link: "/for-institutions"
+  
+  cta_parents:
+    text: "Make the right education decision"
+    link: "/for-parents"
+
+# Stats Section - Update these numbers as you grow
+stats:
+  - label: "Partner Institutions"
+    value: "50+"
+  - label: "Successful Admissions"
+    value: "500+"
+  - label: "Parent Satisfaction"
+    value: "98%"
+  - label: "Cities Covered"
+    value: "15+"
+
+# How It Works - Steps (keep it simple, 3-4 steps max)
+how_it_works:
+  title: "How Ace-Scholara Works"
+  subtitle: "A success-only admissions model"
+  
+  steps:
+    - title: "We Curate & Qualify"
+      description: "We identify families genuinely seeking premium education, not just leads."
+      icon: "tabler:users-group"
+    
+    - title: "Real Exposure"
+      description: "Campus visits, alumni connects, parent interactions - real people, real outcomes."
+      icon: "tabler:building"
+    
+    - title: "Right-Fit Matching"
+      description: "We match students to institutions based on fit, not commissions."
+      icon: "tabler:puzzle"
+    
+    - title: "Pay on Success"
+      description: "Institutions pay only after admission + fee realisation. Zero risk."
+      icon: "tabler:check"
+
+# Why We're Different - Key Differentiators
+differentiators:
+  title: "Why We're Different"
+  subtitle: "Unlike agents & portals"
+  
+  points:
+    - title: "No Upfront Fees"
+      description: "Zero marketing spend required. We invest in your success first."
+      icon: "tabler:currency-rupee-off"
+    
+    - title: "Payment on Enrollment"
+      description: "You pay only after a student enrolls AND the first fee is collected."
+      icon: "tabler:receipt"
+    
+    - title: "MoU-Backed Commitment"
+      description: "Formal agreements with seat commitments. Full transparency."
+      icon: "tabler:file-certificate"
+    
+    - title: "No Mis-selling"
+      description: "We don't sell leads. We fulfill admissions with the right students."
+      icon: "tabler:shield-check"
+
+# Ethical Boundaries - What we explicitly don't do
+ethics:
+  title: "Our Ethical Boundaries"
+  subtitle: "Trust is our moat. We explicitly do not:"
+  
+  boundaries:
+    - "Sell unqualified leads"
+    - "Push wrong-fit institutions"
+    - "Take hidden commissions"
+    - "Manipulate rankings or reviews"
+    - "Make false promises to parents"
+
+# Footer
+footer:
+  copyright: "© 2025 Ace-Scholara. All rights reserved."
+  tagline: "Outcome-backed admissions for premium education."

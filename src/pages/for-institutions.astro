@@ -1,0 +1,361 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'For Institutions — Fill Seats Without Marketing Risk | Ace-Scholara',
+  description: 'Partner with Ace-Scholara to fill seats with zero upfront marketing spend. Pay only after successful enrollment and fee realisation.',
+};
+---
+
+<Layout metadata={metadata}>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="text-blue-400 font-semibold mb-4 tracking-wide uppercase text-sm">
+          For Schools & Colleges
+        </p>
+        
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Fill seats without <span class="text-gradient">marketing spend</span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          We bring qualified, decision-ready families to your institution. 
+          <strong class="text-white">You pay only after enrollment and fee realisation.</strong>
+          Zero upfront cost. Zero risk.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all text-center">
+            Become a Partner
+          </a>
+          <a href="#how-it-works" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-semibold transition-all text-center">
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-red-500 font-semibold mb-2 uppercase text-sm">The Challenge</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Sound familiar?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Heavy Marketing Spend</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Lakhs spent on ads, portals, and agents with uncertain returns.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Low-Quality Leads</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Thousands of inquiries, but few serious, decision-ready families.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Agent Mis-selling</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Agents make promises you can't keep, damaging your reputation.</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border-l-4 border-red-500">
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Unfilled Seats</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Despite all the spend, seats remain empty cycle after cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-blue-600 font-semibold mb-2 uppercase text-sm">Our Model</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          How Ace-Scholara works for you
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          A success-only partnership. We invest first, you pay on results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-600">1</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Sign MoU</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">We agree on seat commitments, timelines, and pricing. No upfront payment.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-600">2</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">We Find Families</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">We identify and qualify decision-ready families looking for institutions like yours.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-blue-600">3</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Real Exposure</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Campus visits, alumni connects, parent interactions. Families see the real you.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-green-600">4</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Pay on Success</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">You pay only after enrollment AND first fee realisation. True outcome-based pricing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <Features
+    id="benefits"
+    tagline="Partner Benefits"
+    title="Why institutions choose us"
+    subtitle="A model that aligns your success with ours"
+    items={[
+      {
+        title: 'Zero Upfront Cost',
+        description: 'No listing fees, no marketing spend, no payment until you see results.',
+        icon: 'tabler:coin-off',
+      },
+      {
+        title: 'Qualified Families Only',
+        description: 'We don\'t send random leads. Every family is decision-ready and budget-aligned.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Brand Protection',
+        description: 'No aggressive sales tactics. No false promises. Your reputation stays intact.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'MoU-Backed Commitment',
+        description: 'Formal agreements with seat commitments. Full transparency and accountability.',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'Real Exposure',
+        description: 'Families experience your campus, meet alumni, and interact with current parents.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Data & Insights',
+        description: 'Understand what families are looking for. Improve your positioning.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <!-- Comparison Table -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-blue-600 font-semibold mb-2 uppercase text-sm">Comparison</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          How we compare
+        </h2>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
+        <table class="w-full">
+          <thead class="bg-slate-100 dark:bg-slate-700">
+            <tr>
+              <th class="px-6 py-4 text-left font-semibold text-gray-900 dark:text-white">Feature</th>
+              <th class="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white">Agents</th>
+              <th class="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white">Portals</th>
+              <th class="px-6 py-4 text-center font-semibold text-blue-600 dark:text-blue-400">Ace-Scholara</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Upfront Payment</td>
+              <td class="px-6 py-4 text-center text-red-500">Required</td>
+              <td class="px-6 py-4 text-center text-red-500">Required</td>
+              <td class="px-6 py-4 text-center text-green-500 font-semibold">None</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">You Pay For</td>
+              <td class="px-6 py-4 text-center text-gray-500">Leads</td>
+              <td class="px-6 py-4 text-center text-gray-500">Visibility</td>
+              <td class="px-6 py-4 text-center text-green-500 font-semibold">Enrollments</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Lead Quality</td>
+              <td class="px-6 py-4 text-center text-yellow-500">Variable</td>
+              <td class="px-6 py-4 text-center text-yellow-500">Variable</td>
+              <td class="px-6 py-4 text-center text-green-500 font-semibold">Decision-ready</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Brand Risk</td>
+              <td class="px-6 py-4 text-center text-red-500">High</td>
+              <td class="px-6 py-4 text-center text-yellow-500">Medium</td>
+              <td class="px-6 py-4 text-center text-green-500 font-semibold">Protected</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Accountability</td>
+              <td class="px-6 py-4 text-center text-red-500">None</td>
+              <td class="px-6 py-4 text-center text-red-500">None</td>
+              <td class="px-6 py-4 text-center text-green-500 font-semibold">MoU-backed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Model -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-blue-600 font-semibold mb-2 uppercase text-sm">Pricing</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Simple, outcome-based pricing
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Pay only when a student enrolls and the first fee is collected
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 md:p-12 text-white">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Success Fee Model</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Percentage of first-year fee
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Payable only after fee realisation
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Pricing linked to course fee band
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                No hidden charges
+              </li>
+            </ul>
+          </div>
+          <div class="text-center">
+            <p class="text-blue-200 mb-2">Your investment</p>
+            <p class="text-5xl font-bold mb-2">₹0</p>
+            <p class="text-blue-200">upfront</p>
+            <div class="mt-6">
+              <a href="/contact" class="inline-block px-8 py-4 bg-white text-blue-700 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
+                Get Custom Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <FAQs
+    title="Questions from Institutions"
+    subtitle="Everything you need to know about partnering with us"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What types of institutions do you work with?',
+        description: 'We work with premium private schools (K-12, international curriculum) and colleges that prioritize quality education. We focus on institutions with annual fees of ₹2L+ for schools and ₹1L+ for colleges.',
+      },
+      {
+        title: 'How do you ensure the families are decision-ready?',
+        description: 'We conduct structured conversations to assess genuine intent, budget alignment, timeline, and decision-making authority. We don\'t forward random inquiries - only families who are ready to make a decision.',
+      },
+      {
+        title: 'What is the typical success fee percentage?',
+        description: 'Success fees typically range from 5-15% of the first-year fee, depending on the institution type, location, and volume commitment. We\'ll provide a custom quote based on your specific needs.',
+      },
+      {
+        title: 'How long does it take to see results?',
+        description: 'Most partners see their first successful enrollments within 2-3 months of signing the MoU. Timing depends on the admission cycle and seat availability.',
+      },
+      {
+        title: 'What if a student drops out or cancels?',
+        description: 'Our fee is tied to actual fee realisation. If a student cancels before paying the first fee, or gets a full refund, no success fee is applicable.',
+      },
+      {
+        title: 'Do you have exclusivity requirements?',
+        description: 'No. You can continue with your existing marketing efforts and other partners. We work alongside your existing channels.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to fill seats without risk?
+      </h2>
+      <p class="text-xl text-blue-100 mb-10">
+        Join institutions that have switched to outcome-based admissions
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-4 bg-white text-blue-700 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
+          Schedule a Call
+        </a>
+        <a href="mailto:partners@ace-scholara.com" class="px-8 py-4 bg-white/10 text-white border border-white/30 rounded-xl font-semibold hover:bg-white/20 transition-colors">
+          Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

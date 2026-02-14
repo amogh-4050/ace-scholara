@@ -1,0 +1,559 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+// Import editable data
+import testimonials from '~/data/testimonials.json';
+import partners from '~/data/partners.json';
+
+const featuredTestimonials = testimonials.testimonials.filter(t => t.featured);
+const featuredPartners = partners.partners.filter(p => p.featured);
+
+const metadata = {
+  title: 'Ace-Scholara — Outcome-Backed Admissions for Premium Education',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <style>
+    /* Trust-first design - clean, professional, minimal */
+    .trust-gradient {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ethics-card {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .ethics-card::before {
+      content: '✗';
+      position: absolute;
+      left: 0;
+      color: #ef4444;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- ========================================
+       HERO SECTION
+       Main message: Trust & Outcomes
+       ======================================== -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32">
+      <div class="text-center max-w-4xl mx-auto">
+        <!-- Tagline -->
+        <p class="text-blue-400 font-semibold mb-4 tracking-wide uppercase text-sm">
+          Outcome-Backed Admissions
+        </p>
+        
+        <!-- Main Headline -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Admissions without hype.<br/>
+          <span class="text-gradient">Outcomes without risk.</span>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          We help premium schools & colleges fill seats with zero marketing risk. 
+          <strong class="text-white">We get paid only after a student enrolls and the first fee is realised.</strong>
+        </p>
+        
+        <!-- Dual CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/for-institutions" 
+            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
+          >
+            For Institutions →
+          </a>
+          <a 
+            href="/for-parents" 
+            class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-semibold transition-all backdrop-blur-sm"
+          >
+            For Parents →
+          </a>
+        </div>
+        
+        <!-- Trust indicators -->
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            No upfront fees
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Pay on success only
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            MoU-backed commitments
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       THE PROBLEM
+       ======================================== -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-red-500 font-semibold mb-2 uppercase text-sm">The Problem</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Admissions are broken
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Premium institutions face expensive, uncertain, and misaligned admissions
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-red-100 dark:border-red-900/30">
+          <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Rising Marketing Costs</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Heavy spend on ads, portals, and agents with poor ROI</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-red-100 dark:border-red-900/30">
+          <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Empty Seats</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Chronic underutilization despite demand</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-red-100 dark:border-red-900/30">
+          <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Agent Dependence</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Reliance on agents who sell volume, not fit</p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-red-100 dark:border-red-900/30">
+          <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">Brand Dilution</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Aggressive agent promises damage reputation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       HOW IT WORKS
+       Visual, simple steps
+       ======================================== -->
+  <Steps
+    title="How Ace-Scholara Works"
+    subtitle="A success-only admissions infrastructure"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium text-blue-600">We Curate & Qualify</span>',
+        description: 'We identify families genuinely seeking premium education — not just leads, but decision-ready families.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Step 2: <span class="font-medium text-blue-600">Real Exposure</span>',
+        description: 'Campus visits, alumni connects, parent interactions. Real people, real outcomes, zero hype.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Step 3: <span class="font-medium text-blue-600">Right-Fit Matching</span>',
+        description: 'We match students to institutions based on fit — not commissions or quotas.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'Step 4: <span class="font-medium text-blue-600">Pay on Success</span>',
+        description: 'Institutions pay only after admission AND fee realisation. Zero upfront risk.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      alt: 'Students at campus',
+    }}
+  />
+
+  <!-- ========================================
+       WHY WE'RE DIFFERENT
+       ======================================== -->
+  <Features
+    id="difference"
+    tagline="Why We're Different"
+    title="Unlike agents & portals"
+    subtitle="We don't sell leads. We fulfill admissions."
+    items={[
+      {
+        title: 'No Upfront Fees',
+        description: 'Zero marketing spend required. We invest in your success first.',
+        icon: 'tabler:coin-off',
+      },
+      {
+        title: 'Payment on Enrollment',
+        description: 'You pay only after a student enrolls AND the first fee is collected.',
+        icon: 'tabler:receipt-2',
+      },
+      {
+        title: 'MoU-Backed Commitments',
+        description: 'Formal agreements with seat commitments. Full transparency, full accountability.',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'No Mis-selling Incentive',
+        description: 'Our model only works when the right student joins the right institution.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Qualified Families',
+        description: 'We bring decision-ready families, not random inquiries or bought leads.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Brand Protection',
+        description: 'No aggressive tactics. No false promises. Your reputation stays intact.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
+  <!-- ========================================
+       COMPARISON TABLE
+       ======================================== -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2 uppercase text-sm">Competitive Landscape</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          How we compare
+        </h2>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden fade-in">
+        <table class="w-full">
+          <thead class="bg-slate-100 dark:bg-slate-700">
+            <tr>
+              <th class="px-6 py-4 text-left font-semibold text-gray-900 dark:text-white">Model</th>
+              <th class="px-6 py-4 text-left font-semibold text-gray-900 dark:text-white">Paid For</th>
+              <th class="px-6 py-4 text-left font-semibold text-gray-900 dark:text-white">Risk</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Agents</td>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Leads</td>
+              <td class="px-6 py-4"><span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">Mis-selling</span></td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Portals</td>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Visibility</td>
+              <td class="px-6 py-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">No accountability</span></td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Consultants</td>
+              <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Advice</td>
+              <td class="px-6 py-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Limited scale</span></td>
+            </tr>
+            <tr class="bg-blue-50 dark:bg-blue-900/20">
+              <td class="px-6 py-4 font-semibold text-blue-700 dark:text-blue-300">Ace-Scholara</td>
+              <td class="px-6 py-4 font-semibold text-blue-700 dark:text-blue-300">Outcomes</td>
+              <td class="px-6 py-4"><span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Aligned incentives ✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ETHICAL BOUNDARIES
+       Publicly stated
+       ======================================== -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-slate-900 dark:bg-slate-800 rounded-3xl p-8 md:p-12 text-white">
+        <div class="text-center mb-10">
+          <p class="text-blue-400 font-semibold mb-2 uppercase text-sm">Our Ethical Boundaries</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Trust is our moat
+          </h2>
+          <p class="text-xl text-gray-400">
+            We explicitly do not:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">Sell unqualified leads</p>
+              <p class="text-gray-400 text-sm">Every family we connect is decision-ready</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">Push wrong-fit institutions</p>
+              <p class="text-gray-400 text-sm">We match based on fit, not commissions</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">Take hidden commissions</p>
+              <p class="text-gray-400 text-sm">Full transparency in all dealings</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold">Manipulate rankings or reviews</p>
+              <p class="text-gray-400 text-sm">Honest information only</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS / REAL STORIES
+       ======================================== -->
+  <section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2 uppercase text-sm">Real Stories</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          From our partners & families
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Real outcomes from real people
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {featuredTestimonials.map((testimonial) => (
+          <div class="card-hover bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg">
+            <div class="flex items-center gap-1 text-yellow-500 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                {testimonial.name.charAt(0)}
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  {testimonial.role}{testimonial.institution ? `, ${testimonial.institution}` : ''}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PARTNER INSTITUTIONS
+       ======================================== -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-blue-600 dark:text-blue-400 font-semibold mb-2 uppercase text-sm">Trusted By</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Partner Institutions
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+        {featuredPartners.map((partner) => (
+          <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-2">
+              <span class="text-2xl font-bold text-gray-400">{partner.name.substring(0, 2)}</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{partner.name}</p>
+          </div>
+        ))}
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mb-2 border-2 border-dashed border-blue-300">
+            <span class="text-2xl font-bold text-blue-400">+{partners.stats.total_partners - featuredPartners.length}</span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400">More partners</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FAQs
+       ======================================== -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions from institutions and parents"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'How does the payment model work?',
+        description: 'You pay only after a student enrolls AND the first fee is collected. There are no upfront fees, no listing charges, and no visibility fees. Our success is tied to your success.',
+      },
+      {
+        title: 'What is the MoU-backed seat commitment?',
+        description: 'We sign a formal agreement outlining the number of seats we commit to fill, the timeline, and the pricing. This ensures accountability on both sides.',
+      },
+      {
+        title: 'How do you qualify families?',
+        description: 'We assess genuine intent, budget alignment, and decision readiness through structured conversations and campus exposure programs. We don\'t forward random inquiries.',
+      },
+      {
+        title: 'What makes you different from education portals?',
+        description: 'Portals sell visibility; we sell outcomes. They get paid whether you get admissions or not. We only get paid when you do.',
+      },
+      {
+        title: 'Do you work with schools and colleges both?',
+        description: 'Yes, we work with premium private schools (K-12) and colleges. Our model adapts to both, focusing on institutions that prioritize quality over quantity.',
+      },
+      {
+        title: 'How do parents benefit from Ace-Scholara?',
+        description: 'Parents get unbiased guidance, real exposure to institutions (not just brochures), and confidence that we\'re recommending fit—not pushing whoever pays us more.',
+      },
+    ]}
+  />
+
+  <!-- ========================================
+       FINAL CTA
+       ======================================== -->
+  <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Ready to fill seats without risk?
+      </h2>
+      <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+        Join 50+ institutions already using outcome-backed admissions
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/for-institutions" 
+          class="px-8 py-4 bg-white text-blue-700 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
+        >
+          Partner With Us
+        </a>
+        <a 
+          href="/contact" 
+          class="px-8 py-4 bg-white/10 text-white border border-white/30 rounded-xl font-semibold hover:bg-white/20 transition-colors"
+        >
+          Schedule a Call
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- Scroll Animation Script -->
+<script>
+  function initAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+  }
+
+  initAnimations();
+  document.addEventListener('astro:page-load', initAnimations);
+</script>

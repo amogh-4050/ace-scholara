@@ -36,6 +36,9 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
+    <!-- Netlify Identity Widget for Admin CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
   </head>
@@ -44,5 +47,18 @@ const { language, textDirection } = I18N;
     <slot />
 
     <BasicScripts />
+
+    <!-- Netlify Identity: Redirect to admin after login -->
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

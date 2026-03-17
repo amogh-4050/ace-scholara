@@ -1,3 +1,5 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: main
@@ -10,21 +12,12 @@ public_folder: "/images/uploads"
 site_url: https://adorable-malabi-5f0452.netlify.app
 display_url: https://adorable-malabi-5f0452.netlify.app
 
-# Logo in admin panel
-logo_url: /images/logo.png
-
-# Slug settings
-slug:
-  encoding: "ascii"
-  clean_accents: true
-  sanitize_replacement: "-"
-
 # ============================================
 # CONTENT COLLECTIONS
 # ============================================
 collections:
   # --------------------------------------------
-  # COLLEGES
+  # COLLEGES (folder-based, multiple files)
   # --------------------------------------------
   - name: "colleges"
     label: "🏫 Colleges"
@@ -35,158 +28,122 @@ collections:
     format: "json"
     slug: "{{slug}}"
     identifier_field: "name"
-    summary: "{{name}} - {{location.city}}"
     fields:
-      - { label: "College Name", name: "name", widget: "string", hint: "Full name of the college" }
-      - { label: "Short Name", name: "shortName", widget: "string", hint: "Abbreviated name (e.g., MIT, RVCE)" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "URL-friendly name (e.g., mit-manipal)" }
+      - { label: "College Name", name: "name", widget: "string" }
+      - { label: "Short Name", name: "shortName", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - label: "Location"
         name: "location"
         widget: "object"
         fields:
           - { label: "City", name: "city", widget: "string" }
           - { label: "State", name: "state", widget: "string", default: "Karnataka" }
-          - { label: "Address", name: "address", widget: "string", required: false }
       - label: "Type"
         name: "type"
         widget: "select"
         options: ["Private", "Deemed", "Government", "Autonomous"]
-      - { label: "Established Year", name: "established", widget: "number", value_type: "int", min: 1900, max: 2025 }
-      - { label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5, step: 0.1 }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage?" }
-      - label: "Accreditation"
-        name: "accreditation"
-        widget: "list"
-        field: { label: "Accreditation", name: "accreditation", widget: "string" }
-        hint: "e.g., NAAC A++, NBA, AICTE"
-      - label: "Ranking"
-        name: "ranking"
-        widget: "object"
-        fields:
-          - { label: "NIRF Rank", name: "nirf", widget: "number", required: false }
-          - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Established Year", name: "established", widget: "number", value_type: "int" }
+      - { label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5 }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - label: "Courses"
         name: "courses"
         widget: "list"
-        summary: "{{fields.name}} - ₹{{fields.fees}}"
         fields:
           - { label: "Course Name", name: "name", widget: "string" }
-          - { label: "Duration", name: "duration", widget: "string", hint: "e.g., 4 years" }
-          - { label: "Total Fees (₹)", name: "fees", widget: "number" }
-          - { label: "Seats", name: "seats", widget: "number", required: false }
-      - label: "Placement Stats"
-        name: "placementStats"
-        widget: "object"
-        fields:
-          - { label: "Average Package (LPA)", name: "averagePackage", widget: "number", value_type: "float" }
-          - { label: "Highest Package (LPA)", name: "highestPackage", widget: "number", value_type: "float" }
-          - { label: "Placement Rate (%)", name: "placementRate", widget: "number", min: 0, max: 100 }
-      - label: "Facilities"
-        name: "facilities"
-        widget: "list"
-        field: { label: "Facility", name: "facility", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Total Fees", name: "fees", widget: "number" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Website", name: "website", widget: "string", required: false }
-      - { label: "Logo", name: "logo", widget: "image", required: false }
 
   # --------------------------------------------
-  # TESTIMONIALS
+  # TESTIMONIALS (single file with files array)
   # --------------------------------------------
   - name: "testimonials"
     label: "💬 Testimonials"
-    label_singular: "Testimonial"
     description: "Manage testimonials from parents, students, and institutions"
-    file: "src/data/testimonials.json"
-    fields:
-      - label: "Testimonials"
+    files:
+      - label: "All Testimonials"
         name: "testimonials"
-        widget: "list"
-        summary: "{{fields.name}} - {{fields.type}}"
+        file: "src/data/testimonials.json"
         fields:
-          - { label: "ID", name: "id", widget: "number", value_type: "int" }
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Role", name: "role", widget: "string", hint: "e.g., Parent, Director, Student" }
-          - { label: "Institution", name: "institution", widget: "string", required: false }
-          - label: "Type"
-            name: "type"
-            widget: "select"
-            options:
-              - { label: "Institution", value: "institution" }
-              - { label: "Parent", value: "parent" }
-              - { label: "Student", value: "student" }
-          - { label: "Quote", name: "quote", widget: "text" }
-          - { label: "Photo", name: "image", widget: "image", required: false }
-          - { label: "Featured", name: "featured", widget: "boolean", default: false }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string", required: false }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["institution", "parent", "student"]
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Featured", name: "featured", widget: "boolean", default: false }
 
   # --------------------------------------------
-  # PARTNER INSTITUTIONS
+  # PARTNER INSTITUTIONS (single file with files array)
   # --------------------------------------------
   - name: "partners"
     label: "🤝 Partners"
-    label_singular: "Partner"
     description: "Manage partner institutions displayed on the website"
-    file: "src/data/partners.json"
-    fields:
-      - label: "Partners"
+    files:
+      - label: "All Partners"
         name: "partners"
-        widget: "list"
-        summary: "{{fields.name}} - {{fields.city}}"
+        file: "src/data/partners.json"
         fields:
-          - { label: "ID", name: "id", widget: "number", value_type: "int" }
-          - { label: "Name", name: "name", widget: "string" }
-          - label: "Type"
-            name: "type"
-            widget: "select"
-            options:
-              - { label: "School", value: "school" }
-              - { label: "College", value: "college" }
-          - { label: "City", name: "city", widget: "string" }
-          - { label: "Logo", name: "logo", widget: "image", required: false }
-          - { label: "Website", name: "website", widget: "string", required: false }
-          - { label: "Featured", name: "featured", widget: "boolean", default: false }
-      - label: "Stats"
-        name: "stats"
-        widget: "object"
-        fields:
-          - { label: "Total Partners", name: "total_partners", widget: "number" }
-          - { label: "Schools", name: "schools", widget: "number" }
-          - { label: "Colleges", name: "colleges", widget: "number" }
-          - { label: "Cities", name: "cities", widget: "number" }
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Name", name: "name", widget: "string" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["school", "college"]
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - { label: "Website", name: "website", widget: "string", required: false }
+              - { label: "Featured", name: "featured", widget: "boolean", default: false }
+          - label: "Stats"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Total Partners", name: "total_partners", widget: "number" }
+              - { label: "Schools", name: "schools", widget: "number" }
+              - { label: "Colleges", name: "colleges", widget: "number" }
+              - { label: "Cities", name: "cities", widget: "number" }
 
   # --------------------------------------------
-  # STATISTICS
+  # STATISTICS (single file with files array)
   # --------------------------------------------
   - name: "stats"
     label: "📊 Statistics"
     description: "Update numbers shown on the website"
-    file: "src/data/stats.json"
-    fields:
-      - label: "Homepage Stats"
-        name: "homepage_stats"
-        widget: "list"
-        summary: "{{fields.label}}: {{fields.value}}"
+    files:
+      - label: "Site Statistics"
+        name: "stats"
+        file: "src/data/stats.json"
         fields:
-          - { label: "Label", name: "label", widget: "string" }
-          - { label: "Value", name: "value", widget: "string", hint: "e.g., 50+, 98%, 10K+" }
-          - { label: "Description", name: "description", widget: "string", required: false }
-      - label: "Institution Stats"
-        name: "institution_stats"
-        widget: "list"
-        summary: "{{fields.label}}: {{fields.value}}"
-        fields:
-          - { label: "Label", name: "label", widget: "string" }
-          - { label: "Value", name: "value", widget: "string" }
-          - { label: "Description", name: "description", widget: "string", required: false }
-      - label: "Market Stats"
-        name: "market_stats"
-        widget: "object"
-        fields:
-          - { label: "International Schools (South India)", name: "international_schools_south_india", widget: "string" }
-          - { label: "Private Colleges (South India)", name: "private_colleges_south_india", widget: "string" }
-          - { label: "Annual Admissions Market", name: "annual_admissions_market", widget: "string" }
+          - label: "Homepage Stats"
+            name: "homepage_stats"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Description", name: "description", widget: "string", required: false }
+          - label: "Institution Stats"
+            name: "institution_stats"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Description", name: "description", widget: "string", required: false }
 
   # --------------------------------------------
-  # BLOG POSTS
+  # BLOG POSTS (folder-based, multiple files)
   # --------------------------------------------
   - name: "blog"
     label: "📝 Blog Posts"
@@ -195,12 +152,13 @@ collections:
     folder: "src/data/post"
     create: true
     slug: "{{slug}}"
+    format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "URL-friendly title" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Publish Date", name: "publishDate", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "Ace-Scholara Team" }
-      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short description for previews" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - label: "Tags"
         name: "tags"
@@ -210,33 +168,36 @@ collections:
       - { label: "Content", name: "body", widget: "markdown" }
 
   # --------------------------------------------
-  # SITE SETTINGS
+  # SITE SETTINGS (single file with files array)
   # --------------------------------------------
   - name: "settings"
     label: "⚙️ Site Settings"
     description: "Global site configuration"
-    file: "src/config/site.yaml"
-    fields:
-      - label: "Site"
+    files:
+      - label: "Site Configuration"
         name: "site"
-        widget: "object"
+        file: "src/config/site.yaml"
         fields:
-          - { label: "Site Name", name: "name", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "URL", name: "url", widget: "string" }
-      - label: "Contact"
-        name: "contact"
-        widget: "object"
-        fields:
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Address", name: "address", widget: "string" }
-      - label: "Social Media"
-        name: "social"
-        widget: "object"
-        fields:
-          - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
-          - { label: "Twitter", name: "twitter", widget: "string", required: false }
-          - { label: "Instagram", name: "instagram", widget: "string", required: false }
-          - { label: "Facebook", name: "facebook", widget: "string", required: false }
+          - label: "Site"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Site Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }

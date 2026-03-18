@@ -48,18 +48,14 @@ const { language, textDirection } = I18N;
 
     <BasicScripts />
 
-    <!-- Netlify Identity: Redirect to admin after login -->
-
+    <!-- Netlify Identity Widget for Admin CMS -->
     <script is:inline>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
+      if (document.location.hostname !== 'localhost') {
+        const script = document.createElement('script');
+        script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+        script.async = true;
+        document.head.appendChild(script);
       }
-    </script> 
+    </script>
   </body>
 </html>

@@ -65,6 +65,7 @@ export const footerData = {
       links: [
         { text: 'Privacy Policy', href: getPermalink('/privacy') },
         { text: 'Terms of Service', href: getPermalink('/terms') },
+        { text: 'Admin Login', href: '/admin' },
       ],
     },
   ],
